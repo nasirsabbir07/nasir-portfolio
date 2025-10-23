@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import LineGradient from "./components/LineGradient";
 import useMediaQuery from "./hooks/useMediaQuery";
 import DotGroup from "./scenes/DotGroup";
 import Landing from "./scenes/Landing";
+import MySkills from "./scenes/MySkills";
 import Navbar from "./scenes/Navbar";
+import Projects from "./scenes/Projects";
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
@@ -29,6 +32,14 @@ function App() {
           <DotGroup selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
         )}
         <Landing setSelectedPage={setSelectedPage} />
+      </div>
+      <LineGradient />
+      <div className="w-5/6 mx-auto md:h-full">
+        <MySkills />
+      </div>
+      <LineGradient />
+      <div className="w-5/6 mx-auto">
+        <Projects />
       </div>
     </div>
   );
